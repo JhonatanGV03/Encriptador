@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/11.0.14-internal"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uq.encriptador.ControllerFx">
+   <Pane fx:id="inicio" prefHeight="400.0" prefWidth="350.0">
+      <ImageView fitHeight="130.0" fitWidth="125.0" layoutX="114.0" layoutY="56.0" pickOnBounds="true"
+                 preserveRatio="true">
+         <Image url="@key.png"/>
+      </ImageView>
+      <Button id="boton" layoutX="131.0" layoutY="239.0" mnemonicParsing="false"
+              onAction="#onActionbtnEncriptar" prefHeight="25.0" prefWidth="92.0" text="Encriptar"/>
+      <Button id="boton" layoutX="136.0" layoutY="280.0" mnemonicParsing="false"
+              onAction="#onActionbtnDesencriptar" text="Desencriptar"/>
+      <Button id="boton" layoutX="156.0" layoutY="324.0" mnemonicParsing="false"
+              onAction="#OnActionSalir" text="Salir"/>
+   </Pane>
+   <Pane fx:id="encriptador" disable="true" prefHeight="400.0" prefWidth="350.0" visible="false">
+      <TextField fx:id="txtPalabraClave" layoutX="81.0" layoutY="237.0" onAction="#onActionPalabraClave"
+                 prefHeight="25.0" prefWidth="189.0" promptText="Palabra clave (14 letras)"/>
+      <ImageView fitHeight="125.0" fitWidth="125.0" layoutX="113.0" layoutY="41.0" pickOnBounds="true"
+                 preserveRatio="true">
+         <Image url="@key.png"/>
+      </ImageView>
+      <Label layoutX="68.0" layoutY="206.0" prefHeight="20.0" prefWidth="153.0" text="Ingrese la palabra clave:">
+         <font>
+            <Font size="14.0"/>
+         </font>
+      </Label>
+      <Button fx:id="btnEncriptar2" layoutX="144.0" layoutY="311.0" mnemonicParsing="false"
+              onAction="#OnActionEncriptar2" text="Encriptar"/>
+      <Text fx:id="txtLetras" fill="RED" layoutX="67.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0"
+            text="¡La palabra clave debe tener 14 letras!" visible="false">
+         <font>
+            <Font size="13.0"/>
+         </font>
+      </Text>
+      <Text fx:id="txtLetras1" fill="RED" layoutX="90.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0"
+            text="¡La palabra clave no es válida!" textAlignment="CENTER" visible="false">
+         <font>
+            <Font size="13.0"/>
+         </font>
+      </Text>
+   </Pane>
+   <Pane fx:id="desencriptador" disable="true" prefHeight="400.0" prefWidth="350.0" visible="false">
+      <TextField fx:id="txtNomArchivo" layoutX="87.0" layoutY="194.0" onAction="#OnActionNomArchivo"
+                 prefHeight="25.0" prefWidth="177.0" promptText="Nombre del achivo (14 letras)"/>
+      <TextField fx:id="txtCodigoEncriptado" layoutX="87.0" layoutY="257.0" onAction="#onActionCodigoEncriptado"
+                 prefHeight="25.0" prefWidth="177.0" promptText="Codigo encriptado (14 letras)"/>
+      <ImageView fitHeight="125.0" fitWidth="125.0" layoutX="113.0" layoutY="21.0" pickOnBounds="true"
+                 preserveRatio="true">
+         <Image url="@key.png"/>
+      </ImageView>
+      <Label layoutX="52.0" layoutY="166.0" text="Ingrese el nombre del archivo:">
+         <font>
+            <Font size="14.0"/>
+         </font>
+      </Label>
+      <Label layoutX="55.0" layoutY="228.0" text="Ingrese el codigo encriptado:">
+         <font>
+            <Font size="14.0"/>
+         </font>
+      </Label>
+      <Button fx:id="btnDesencriptar" layoutX="134.0" layoutY="300.0" mnemonicParsing="false"
+              onAction="#onActionDesencriptar" text="Desencriptar"/>
+      <Text fx:id="txtpalabra" layoutX="81.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0"
+            text="Su palabra es: aaaaaaaaaaaaaa" textAlignment="CENTER" visible="false">
+         <font>
+            <Font size="14.0"/>
+         </font>
+      </Text>
+   </Pane>
+</AnchorPane>

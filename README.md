@@ -1,4 +1,4 @@
-# Encriptador (F.I.C.)
+# Taller Codificación (F.I.C.)
 
 Integrantes: 
 - Juan Manuel Duque Giraldo

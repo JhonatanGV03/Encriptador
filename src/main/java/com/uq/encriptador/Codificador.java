@@ -1,7 +1,7 @@
 package com.uq.encriptador;
 
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class Codificador{
 
@@ -22,6 +22,7 @@ public class Codificador{
         for(int i=0; i<mensajeSeparado.length; i++){
             mensajeEncriptado[i]= (char)(mensajeSeparado[i] + caracteresClave[i]);
         }
+        System.out.println("Mensaje encriptado: " + String.valueOf(mensajeEncriptado));
         return mensajeEncriptado;
     }
 
@@ -50,7 +51,7 @@ public class Codificador{
      */
     public static void crearArchivo(String mensaje) throws IOException {
         String ruta = System.getProperty("user.home") + "\\Desktop\\";
-        FileWriter archivo = new FileWriter((ruta)+(clave+".txt"));
+        PrintWriter archivo = new PrintWriter((ruta)+(clave+".txt"), "UTF-8");
         archivo.write(mensaje);
         archivo.close();
     }
